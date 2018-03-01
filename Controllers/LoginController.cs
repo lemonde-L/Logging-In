@@ -35,7 +35,7 @@ namespace Project.Controllers
             }
             else
             {
-                var ukey = (from p in db.People
+                Session["ukey"] = (from p in db.People
                             where p.PersonEmail.Equals(lg.UserName)
                             select p.PersonKey).FirstOrDefault();
                 lg.PersonKey = (int)ukey;
